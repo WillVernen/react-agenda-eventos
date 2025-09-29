@@ -1,0 +1,302 @@
+/* Estilos gerais e para o container principal */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px; /* Aumentei o espaço entre os cards */
+}
+
+/* Estilos do Card de Evento */
+.evento-card {
+  width: 300px; /* Um pouco mais largo */
+  background-color: #fff;
+  border-radius: 15px; /* Bordas mais arredondadas */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  
+  /* A mágica da transição suave! */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de interação quando o mouse passa por cima */
+.evento-card:hover {
+  transform: translateY(-10px); /* Levanta o card */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
+}
+
+.card-imagem {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-conteudo {
+  padding: 20px;
+}
+
+.card-titulo {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+.card-info {
+  margin: 0 0 12px;
+  color: #777;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-info strong {
+  color: #555;
+  margin-right: 8px;
+}
+
+.card-descricao {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5; /* Melhora a legibilidade */
+}
+
+.app-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  color: #333;
+}
+
+.eventos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.botao-adicionar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-adicionar:hover {
+  background-color: #218838;
+}
+
+/* Container para os botões dentro do card */
+.card-botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+/* Estilo geral para os botões do card */
+.card-botao {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.card-botao:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Estilo específico para o botão de agendar */
+.botao-agendar {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Estilo específico para o botão de excluir */
+.botao-excluir {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Estilos para o Modal/Formulário */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Opcional: Um pouco mais escuro para dar mais foco */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* ALTERADO: Alinha o formulário no topo da página */
+  overflow-y: auto;        /* ADICIONADO: A mágica da rolagem! Aparece só quando necessário */
+  padding: 40px 20px;      /* ADICIONADO: Um espaçamento para o formulário não colar nas bordas */
+  box-sizing: border-box;  /* ADICIONADO: Garante que o padding não "estoure" o tamanho total */
+  z-index: 1000;
+}
+
+.formulario-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 500px;
+}
+
+.formulario-container h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+}
+
+.formulario-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario-container input,
+.formulario-container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.formulario-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.formulario-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.formulario-botoes button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botao-salvar {
+  background-color: #28a745;
+  color: white;
+}
+.botao-salvar:hover {
+  background-color: #218838;
+}
+
+.botao-cancelar {
+  background-color: #6c757d;
+  color: white;
+}
+.botao-cancelar:hover {
+  background-color: #5a6268;
+}
+
+/* Estilos para o input de arquivo e preview */
+.form-separador {
+  text-align: center;
+  color: #888;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.input-file {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  color: #555;
+  transition: background-color 0.2s ease;
+}
+
+.input-file:hover {
+  background-color: #f9f9f9;
+}
+
+.imagem-preview-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.imagem-preview-container p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.imagem-preview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.header-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.controle-ordenacao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controle-ordenacao label {
+  font-weight: bold;
+  color: #555;
+}
+
+.seletor-ordem {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
