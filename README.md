@@ -12,7 +12,7 @@ Uma aplicação web moderna construída com React para gerenciar e visualizar um
 
 ## 🚀 Como Executar Localmente
 
-1.  Clone o repositório: `git clone https://[SEU-LINK-AQUI]`
+1.  Clone o repositório: `git clone https://github.com/WillVernen/react-agenda-eventos.git`
 2.  Navegue até a pasta do projeto: `cd cards-eventos`
 3.  Instale as dependências: `npm install`
 4.  Inicie o servidor de desenvolvimento: `npm run dev`
